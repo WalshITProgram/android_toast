@@ -5,7 +5,6 @@
 
 import ToastExample from './ToastExample';
 
-
 import React, {Component} from 'react';
 import {
   StyleSheet,
@@ -19,7 +18,6 @@ render(){
   return (
     <View style={ styles.container }>
       <TouchableOpacity style={ styles.button } onPress={ () => {
-        //NativeModules.ToastExample.show("Hello World!");
         ToastExample.show('React Native Modules are Fun!!', ToastExample.LONG);
       }}>
         <Text style={ styles.text }>Press Me!</Text>
