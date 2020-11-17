@@ -12,18 +12,17 @@ import {
   View,
   Text,
   TouchableOpacity, 
-  NativeModules,
 } from 'react-native';
 
 export default class App extends Component {
 render(){
   return (
-    <View style={{padding: 50}}>
-      <TouchableOpacity onPress={ () => {
+    <View style={ styles.container }>
+      <TouchableOpacity style={ styles.button } onPress={ () => {
         //NativeModules.ToastExample.show("Hello World!");
-        ToastExample.show('React Native Modules are Fun!!');
+        ToastExample.show('React Native Modules are Fun!!', ToastExample.LONG);
       }}>
-        <Text>Press Me!</Text>
+        <Text style={ styles.text }>Press Me!</Text>
       </TouchableOpacity>
     </View>
   );
@@ -31,5 +30,22 @@ render(){
 }  
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  button: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    backgroundColor: '#33BAFF',
+    height: 80,
+    width: 200,
+  }
 });
 
